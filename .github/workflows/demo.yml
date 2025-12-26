@@ -1,0 +1,20 @@
+name: CI
+on:
+  push:
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    #  - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: welcome message
+        run: echo Hello, welcome to gh actions!
+
+      # Runs a set of commands using the runners shell
+      - name: list files
+        run: ls
+      - name: read files
+        run: cat README.md
