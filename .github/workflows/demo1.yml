@@ -2,13 +2,16 @@ name: demo1
 on:
     workflow_dispatch
 
+env: 
+    GREETING: "welcome"
+
 jobs:
     build:
         runs-on: ubuntu-latest
 
         steps:
         - name: create a text file
-          run: echo "welcome to my github actions project" > ghaction.txt
+          run: echo "${{env.GREETING}} ${{secrets.WORLD}}" > ghaction.txt
         - uses: actions/upload-artifact@v4
           with:
             name: ghfile
