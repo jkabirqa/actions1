@@ -9,3 +9,18 @@ jobs:
         steps:
         - name: create a text file
           run: echo "welcome to my github actions project" > ghaction.txt
+        - uses: actions/upload-artifact@v4
+          with:
+            name: ghfile
+            path: ghaction.txt
+
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/download-artifact@v5
+              with:
+                name: ghfile
+            - name: ghfile.txt
+              run: ls
+            - name: test file
+              run: cat ghfile.txt | grep -i "welcome"
