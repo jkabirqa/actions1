@@ -24,4 +24,4 @@ jobs:
             - name: ghaction.txt
               run: ls
             - name: test file
-              run: cat ghfile.txt | grep -i "welcome"
+              run: cat ghaction.txt | grep -i "welcome"
