@@ -1,0 +1,11 @@
+name: demo1
+on:
+    workflow_dispatch
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: create a text file
+          run: echo "welcome to my github actions project" > ghaction.txt
