@@ -21,7 +21,7 @@ jobs:
             - uses: actions/download-artifact@v5
               with:
                 name: ghfile
-            - name: ghfile.txt
+            - name: ghaction.txt
               run: ls
             - name: test file
               run: cat ghfile.txt | grep -i "welcome"
