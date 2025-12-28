@@ -1,22 +1,22 @@
 name: Solar System Workflow
 on:
-  push:
-  workflow_dispatch:
+   push:
+   workflow_dispatch:
 jobs:
-  unit-testing:
-    runs-on: ubuntu-latest
+   unit-testing:
+     runs-on: ubuntu-latest
 
-    steps:
-      - name: checkout repository
-        uses: actions/checkout@v4
+     steps:
+        - name: checkout repository
+          uses: actions/checkout@v4
 
-      - name: list repo files
-        run: ls -ltr  
+        - name: list repo files
+          run: ls -ltr  
 
-      - name: setup nodesjs
-        uses: actions/setup-node@v4
-        with: 
-          node-version: 22
+        - name: setup nodesjs
+          uses: actions/setup-node@v4
+          with: 
+            node-version: 22
 
-      - name: install dependencies
-        run: npm install --no-audit
+        - name: install dependencies
+          run: npm install --no-audit
